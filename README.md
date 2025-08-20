@@ -68,38 +68,48 @@ npx chromatic --project-token=<YOUR_CHROMATIC_PROJECT_TOKEN>
 CHROMATIC_PROJECT_TOKEN=... npm run chromatic
 ```
 
-### Folder Structure (concise)
-```
 uzeba/
-src/
-  components/
-    InputField/
-      InputField.tsx
-      InputField.stories.tsx
-      InputField.test.tsx
-        index.ts
-    DataTable/
-      DataTable.tsx
-      DataTable.stories.tsx
-      DataTable.test.tsx
-        index.ts
-    App.css
-    App.tsx
-    index.css
-    main.tsx
-    vite-env.d.ts
-  public/
-  storybook-static/   # generated Storybook build (can be ignored/cleaned)
-tailwind.config.cjs
-postcss.config.cjs
-vitest.setup.ts
-  vite.config.ts
-  tsconfig.json
-  tsconfig.node.json
-  package.json
-  package-lock.json
-  index.html
-```
+├─ index.html
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.cjs
+├─ tailwind.config.cjs
+├─ tsconfig.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+├─ vitest.setup.ts
+├─ README.md
+├─ public/
+│  └─ vite.svg
+├─ src/
+│  ├─ App.css
+│  ├─ App.tsx
+│  ├─ index.css
+│  ├─ main.tsx
+│  ├─ vite-env.d.ts
+│  ├─ assets/
+│  └─ components/
+│     ├─ InputField/
+│     │  ├─ InputField.tsx
+│     │  ├─ InputField.stories.tsx
+│     │  ├─ InputField.test.tsx
+│     │  └─ index.ts
+│     └─ DataTable/
+│        ├─ DataTable.tsx
+│        ├─ DataTable.stories.tsx
+│        ├─ DataTable.test.tsx
+│        └─ index.ts
+└─ storybook-static/    (generated build output)
+   ├─ index.html
+   ├─ iframe.html
+   ├─ favicon.svg
+   ├─ index.json
+   ├─ project.json
+   ├─ vite.svg
+   ├─ assets/
+   ├─ sb-addons/
+   ├─ sb-common-assets/
+   └─ sb-manager/
 
 ### Scripts
 - `dev`: start Vite dev server
