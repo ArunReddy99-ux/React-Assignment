@@ -12,14 +12,26 @@ The project is a component library starter with:
 - Vitest + React Testing Library for unit and interaction tests.
 - TailwindCSS for styling with a utility-first approach.
 
-### Technologies Used
-- React 18 + TypeScript
-- Vite 4 (builder and dev server)
-- TailwindCSS 3 + PostCSS + Autoprefixer
-- Storybook 8 (Vite builder) + Chromatic (optional CI visual tests)
-- Vitest + @testing-library/react + jsdom + jest-dom
-- ESLint + @typescript-eslint + react-refresh plugins
-- clsx (class composition)
+## Key technologies
+
+- **React**
+  - React 18 with `React.StrictMode`
+  - Functional components and hooks: `useState`, `useEffect`, `useMemo`, `useId`
+  - Controlled components pattern (`value` + `onChange`)
+  - Accessible markup (labels, `aria-*` attributes)
+
+- **TypeScript**
+  - Strongly-typed props via interfaces
+  - Generics for data modeling: `DataTable<T>`, `Column<T>`
+  - Utility types: `keyof T`, `Record<string, unknown>`
+  - Union types for variants/sizes (`'filled' | 'outlined' | 'ghost'`, `'sm' | 'md' | 'lg'`)
+
+- **Storybook**
+  - Storybook 8 (React + Vite builder)
+  - Component Story Format (CSF) stories documenting variants and states
+  - Addons: `@storybook/addon-essentials` (Docs, Controls, Actions, Backgrounds, Viewport, Toolbars, Outline, Measure), `@storybook/addon-interactions`
+  - `@storybook/test` for interaction testing in stories
+  - Static build (`build-storybook`) and optional Chromatic publishing (`chromatic`)
 
 ### How the application works
 - `src/main.tsx` bootstraps the app and renders `src/App.tsx` inside `React.StrictMode`.
@@ -129,12 +141,3 @@ uzeba/
 - Documentation as code: Storybook stories cover variants, states, and interactions; suitable for Chromatic visual regression.
 - Testing with Vitest + Testing Library to verify behavior and accessibility.
 - Developer experience: fast Vite HMR, ESLint strictness, and small, readable components.
-
-### Component APIs (quick reference)
-InputField key props: `value`, `onChange`, `label`, `placeholder`, `helperText`, `errorMessage`, `disabled`, `invalid`, `variant` ('filled' | 'outlined' | 'ghost'), `size` ('sm' | 'md' | 'lg'), `type`, `showClear`, `showPasswordToggle`, `loading`.
-
-DataTable key props: `data: T[]`, `columns: Column<T>[]`, optional `selectable`, and built-in sortable columns.
-
----
-
-If you are developing a production application, consider enabling type-aware ESLint rules (project references) and adding React lint rules.
